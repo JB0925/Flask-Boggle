@@ -1,0 +1,22 @@
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    /* grid-template-areas: "one two three four five"
+                         "one two three four five"
+                         "one two three four five"
+                         "one two three four five"
+                         "one two three four five"; */
+}
+
+.letter {
+    font-size: 6rem;
+    border: 5px solid darkgray;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .letter {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Boggle</title>
+</head>
+{% endblock %}
+
+{% block content %}
+    <div class="game-container">
+        {% for row in board %}
+            {% for item in row %}
+                <div class="letter">{{item}}</div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

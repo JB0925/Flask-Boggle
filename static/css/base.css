@@ -1,0 +1,101 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr 1fr 1fr 1fr 1fr auto auto auto;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "si si si g g g g g sc sc sc"
+                         "si si si g g g g g sc sc sc"
+                         "si si si g g g g g sc sc sc"
+                         "si si si g g g g g sc sc sc"
+                         "si si si g g g g g sc sc sc"
+                         "fo fo fo fo fo fo fo fo fo fo fo";
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    grid-area: si;
+    padding: 25px;
+    position: relative;
+}
+
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -13px;
+    top: 20%;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar li {
+    list-style: none;
+    margin-bottom: 75px;
+}
+
+.header {
+    font-size: 2rem;
+}
+
+.game {
+    grid-area: g;
+}
+
+.scores {
+    grid-area: sc;
+    padding: 25px;
+}
+
+footer {
+    grid-area: fo;
+    background-color: purple;
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        overflow-x: hidden;
+    }
+    .container {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto 1fr auto auto;
+        grid-template-areas: "si si si si si"
+                             "g g g g g"
+                             "sc sc sc sc sc"
+                             "fo fo fo fo fo"
+    }
+
+    .sidebar ul {
+        flex-direction: row;
+        justify-content: flex-start;
+        top: 40%;
+        left: 25%;
+    }
+
+    .sidebar li {
+        margin-right: 70px;
+    }
+}

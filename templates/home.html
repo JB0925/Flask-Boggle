@@ -23,3 +23,9 @@
         {% endfor %}
     </div>
 {% endblock %}
+{% block form %}
+    <form action="#" method="POST">
+        <label for="guess">Guess a letter</label>
+        <input type="text" name="guess" id="guess" placeholder="Enter your guess" required>
+    </form>
+{% endblock %}

@@ -11,7 +11,9 @@ boggle_game = Boggle()
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    board = boggle_game.make_board()
     classes = ['one', 'two', 'three', 'four', 'five']
+    session['board'] = board
     if request.method == 'GET':
-        return render_template('home.html', board=boggle_game.make_board(),
+        return render_template('home.html', board=board,
         classes=classes)

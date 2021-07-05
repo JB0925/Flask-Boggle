@@ -15,6 +15,21 @@
     text-align: center;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+input {
+    height: 35px;
+    border-radius: 5px;
+    outline: hidden;
+}
+
 @media screen and (max-width: 1000px) {
     .letter {
         font-size: 3rem;

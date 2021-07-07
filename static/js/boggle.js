@@ -18,6 +18,7 @@ let alreadyUsed = new Set()
 // to validate the word passed into the form.
 const getFormData = async function(evt) {
     evt.preventDefault();
+    if (!input.value.length) return;
     
     let {resp, data} = await axios.get('/temp', 
     {params: {word: input.value}});

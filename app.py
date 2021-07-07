@@ -15,12 +15,11 @@ def home():
     """The main route for the game. Displays the board
         and all major aspects of the game."""
     session['board'] = board
-    games = session['games_played']
+    games = session.get('games_played', 0)
     if request.method == 'GET':
         return render_template('home.html', board=board, games=games)
     return redirect(url_for('home', board=board, games=games))
     
-
 
 @app.route('/temp', methods=['GET','POST'])
 def temp():
@@ -33,6 +32,7 @@ def temp():
     result = jsonify(result)
     return result
 
+
 @app.route('/games', methods=['GET', 'POST'])
 def games_played():
     """Another GET request is sent here at the end
@@ -40,4 +40,4 @@ def games_played():
        number of games that have been played."""
     games = request.json['games']
     session['games_played'] += 1
-    return jsonify(games)
+    return jsonify(session['games_played'])

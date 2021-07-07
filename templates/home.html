@@ -8,12 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" 
+          crossorigin="anonymous"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
     <title>Boggle</title>
 </head>
 {% endblock %}
-
+{% block timer %}
+    <div class="timer">
+        <h2>Time Left</h2>
+        <h2 id="time"></h2>
+    </div>
+{% endblock %}
 {% block content %}
     <div class="game-container">
         {% for row in board %}
@@ -24,8 +32,17 @@
     </div>
 {% endblock %}
 {% block form %}
-    <form action="#" method="POST">
+    <form action="/temp" method="POST" id="guessForm">
         <label for="guess">Guess a letter</label>
         <input type="text" name="guess" id="guess" placeholder="Enter your guess" required>
+        <button type="submit">Submit</button>
     </form>
+    <div id="msg-holder">
+        <h2 id="msg-display">Your Word Is:</h2>
+        <p id="msg"></p>
+    </div>
+    <div id="score-holder">
+        <h2 id="score-display">Current Score:</h2>
+        <p id="score"></p>
+    </div>
 {% endblock %}

@@ -37,6 +37,7 @@ body {
     grid-area: si;
     padding: 25px;
     position: relative;
+    transition: width 1s ease-in-out;
 }
 
 .sidebar ul {
@@ -47,12 +48,14 @@ body {
     top: 20%;
 }
 
-.sidebar a {
+.sidebar a,
+.slidebar a {
     text-decoration: none;
     color: black;
 }
 
-.sidebar li {
+.sidebar li,
+.slidebar li {
     list-style: none;
     margin-bottom: 75px;
 }
@@ -66,6 +69,7 @@ body {
 }
 
 .scores {
+    position: relative;
     grid-area: sc;
     display: flex;
     flex-direction: column;
@@ -80,6 +84,54 @@ footer {
     padding-bottom: 40px;
     align-items: center;
     justify-content: center;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    font-size: 2rem;
+}
+
+.slidebar {
+    background-color: #0d3b66;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: width 1s ease-in-out;
+    width: 0px;
+    height: 100vh;
+}
+
+.slidebar ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: -25%;
+    margin-top: 10%;
+}
+
+.slidebar a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.slidebar h2 {
+    margin-left: -11.5%;
+}
+
+#close {
+    font-size: 2rem;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: white;
 }
 
 @media screen and (max-width: 1000px) {
@@ -102,6 +154,7 @@ footer {
     }
 
     .sidebar ul {
+        display: none;
         flex-direction: row;
         justify-content: flex-start;
         top: 40%;
@@ -110,5 +163,23 @@ footer {
 
     .sidebar li {
         margin-right: 70px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slidebar ul {
+        margin-left: 0;
+    }
+
+    .slidebar h1 {
+        margin-left: 4%;
+    }
+
+    .slidebar {
+        align-items: flex-start;
+    }
+
+    .slidebar h2 {
+        margin-left: 4%;
     }
 }

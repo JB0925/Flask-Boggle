@@ -2,11 +2,6 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    /* grid-template-areas: "one two three four five"
-                         "one two three four five"
-                         "one two three four five"
-                         "one two three four five"
-                         "one two three four five"; */
 }
 
 .letter {
@@ -27,11 +22,48 @@ label {
 input {
     height: 35px;
     border-radius: 5px;
-    outline: hidden;
+    margin-bottom: 10px;
+}
+
+button {
+    height: 35px;
+    border-radius: 5px;
+    background-color: dodgerblue;
+    color: white;
+}
+
+#msg-display {
+    margin-top: 50px;
+}
+
+#msg {
+    margin-top: 10px;
+}
+
+.timer {
+    position: absolute;
+    top: 70%;
 }
 
 @media screen and (max-width: 1000px) {
     .letter {
         font-size: 3rem;
+    }
+
+    #msg-holder {
+        position: absolute;
+        top: 1%;
+        left: 50%;
+    }
+
+    .timer {
+        top: 25%;
+        left: 50%;
+    }
+
+    #score-holder {
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
 }
